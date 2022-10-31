@@ -25,5 +25,14 @@ pipeline {
                 sh 'docker system prune -f'
             }
         }
+        stage('Push to Docker') {
+            environment {
+                dockerpwd = credentials('AlexDoc')
+            }
+            steps {
+                echo "Push to Docker"
+                sh 'docker login -u romy2003 -p ${dockerpwd}'
+            }
+        }
     }
 }
