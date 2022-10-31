@@ -17,6 +17,7 @@ pipeline {
             steps {
                 echo "Delivery Stage is running" 
                 sh 'DOCKER_BUILDKIT=1 docker build -f Dockerfile-pipelines -t romy2003/todo-fe:jenkins-$BUILD_NUMBER --target delivery .'
+                sh 'docker tag romy2003/todo-fe:jenkins-$BUILD_NUMBER romy2003/todo-fe:latest'
             }
         }
         stage('Cleanup') {
