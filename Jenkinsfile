@@ -32,6 +32,7 @@ pipeline {
             steps {
                 echo "Push to Docker"
                 sh 'docker login -u romy2003 -p ${dockerpwd}'
+                sh "docker push romy2003/todo-fe:jenkins-$BUILD_NUMBER"
             }
         }
     }
