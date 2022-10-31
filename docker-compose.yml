@@ -1,7 +1,7 @@
 version: "3.2"
 services:
  web:
-   image: [romy2003/todo-fe:latest]
+   image: romy2003/todo-fe:latest
    depends_on:
      - api
    ports:
@@ -9,7 +9,7 @@ services:
    networks:
      - network-backend
  api:
-   image: [romy2003/todo-be:latest]
+   image: romy2003/todo-be:latest
    depends_on:
      - mongo
    ports:
